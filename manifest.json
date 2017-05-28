@@ -1,0 +1,21 @@
+{
+"manifest_version": 2,
+    "name": "Fake News Finder",
+    "description": "This application blocks out fake news out of your browsing time",
+    "version": "1.0",
+    "permissions": [
+         "storage", "notifications"
+       ],
+    "content_scripts": [
+        {
+
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "notifications.js", "FakeSites.js", "UniqueWords.js", "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
